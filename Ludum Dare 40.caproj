@@ -49,9 +49,6 @@
         <object-type name="Tilemap" sid="974317744866407">
             <plugin id="Tilemap" />
             <behaviors>
-                <behavior-type name="Solid" sid="448687732502944">
-                    <behavior id="solid" />
-                </behavior-type>
             </behaviors>
             <texture original-source="C:\Users\Patrick\Desktop\New folder\Complete Pack\Base pack\Tiles\tiles_spritesheet.png" />
             <tiles />
@@ -144,6 +141,7 @@
     </object-folder>
     <families />
     <layout-folder>
+        <layout>Level 1 Layout.xml</layout>
         <layout>Test Layout.xml</layout>
     </layout-folder>
     <event-folder>
