@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Player Actions</name>
+    <events>
+        <event-block sid="426869317913489">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="491920720644265" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="667799149551795" type="PlayerWalk">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="599260450673949">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="507204623668791" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="707655745665910" type="PlayerWalk">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="265323967509365">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="911755356393101" type="PlayerWalk" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="694996946648569" type="PlayerWalk">
+                    <param id="0" name="Animation">&quot;Walking&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="438509813193208">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="100907534005861" type="PlayerWalk" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="522884850277540" type="PlayerWalk">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="750523697138178">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="403485089020016" type="PlayerWalk" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="709794476389118" type="PlayerWalk">
+                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="912334227769270">
+            <conditions>
+                <condition behavior="Platform" id="6" name="On fall" sid="270792416192901" type="PlayerWalk" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="663097624869214" type="PlayerWalk">
+                    <param id="0" name="Animation">&quot;Fall&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="432080546254210">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="614245906755892" type="PlayerWalk" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="875138702028790" type="PlayerWalk">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

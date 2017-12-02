@@ -10,10 +10,15 @@
     <unique-id>rfwkaf4c07pi</unique-id>
     <saved-with-version>24400</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -43,6 +48,11 @@
     <object-folder>
         <object-type name="Tilemap" sid="974317744866407">
             <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="448687732502944">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <texture original-source="C:\Users\Patrick\Desktop\New folder\Complete Pack\Base pack\Tiles\tiles_spritesheet.png" />
             <tiles />
         </object-type>
@@ -54,6 +64,83 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="PlayerWalk" sid="523790597717394">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="894470773659579">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="623096074065536" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_idle.png" />
+                </animation>
+                <animation framecount="2" loop="1" name="Walking" pingpong="0" repeatcount="1" repeatto="0" sid="545718483712860" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_walk1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_walk2.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="882134056912748" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_jump.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="Fall" pingpong="0" repeatcount="1" repeatto="0" sid="518583664488205" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_fall.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="773074481653611">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Spider" sid="443336382834034">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="838531856878591">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="359134295919530">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="739824256012961" speed="5">
+                    <frame duration="1" hotspotX="0.507042" hotspotY="0.511111" original-source="C:\Users\ryanm\Downloads\platformer-art-complete-pack-0\Extra animations and enemies\Enemy sprites\spider.png">
+                        <collision-poly>
+                            <point x="0.0422535" y="0.0666667" />
+                            <point x="0.492958" y="0.0222222" />
+                            <point x="0.943662" y="0.0888889" />
+                            <point x="0.985915" y="0.977778" />
+                            <point x="0.492958" y="0.711111" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="237940739748560" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.509804" original-source="C:\Users\ryanm\Downloads\platformer-art-complete-pack-0\Extra animations and enemies\Enemy sprites\spider_walk1.png">
+                        <collision-poly>
+                            <point x="0.0972222" y="0.137255" />
+                            <point x="0.5" y="0.156863" />
+                            <point x="0.916667" y="0.117647" />
+                            <point x="0.958333" y="0.490196" />
+                            <point x="0.916667" y="0.882353" />
+                            <point x="0.5" y="0.745098" />
+                            <point x="0" y="1" />
+                            <point x="0.0277778" y="0.490196" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.506494" hotspotY="0.509434" original-source="C:\Users\ryanm\Downloads\platformer-art-complete-pack-0\Extra animations and enemies\Enemy sprites\spider_walk2.png">
+                        <collision-poly>
+                            <point x="0.142857" y="0.207547" />
+                            <point x="0.493506" y="0.132075" />
+                            <point x="0.883117" y="0.169811" />
+                            <point x="0.961039" y="0.490566" />
+                            <point x="0.987013" y="0.981132" />
+                            <point x="0.493506" y="0.716981" />
+                            <point x="0.116883" y="0.830189" />
+                            <point x="0.0779221" y="0.490566" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -61,8 +148,11 @@
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Player Actions.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Keyboard" uid="3" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>
