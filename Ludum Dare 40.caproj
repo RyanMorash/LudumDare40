@@ -15,13 +15,9 @@
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
-<<<<<<< HEAD
-        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
-=======
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
->>>>>>> upstream/master
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -53,13 +49,6 @@
         <object-type name="Tilemap" sid="974317744866407">
             <plugin id="Tilemap" />
             <behaviors>
-<<<<<<< HEAD
-                <behavior-type name="Solid" sid="456098210646484">
-=======
-                <behavior-type name="Solid" sid="448687732502944">
->>>>>>> upstream/master
-                    <behavior id="solid" />
-                </behavior-type>
             </behaviors>
             <texture original-source="C:\Users\Patrick\Desktop\New folder\Complete Pack\Base pack\Tiles\tiles_spritesheet.png" />
             <tiles />
@@ -153,19 +142,14 @@
     <families />
     <layout-folder>
         <layout>Level 1 Layout.xml</layout>
+        <layout>Test Layout.xml</layout>
     </layout-folder>
-<<<<<<< HEAD
-    <event-folder />
-    <global-instances />
-=======
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Player Actions.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="3" />
     </global-instances>
->>>>>>> upstream/master
     <sounds-folder />
     <music-folder />
     <files-folder>
