@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Weapons Event Sheet</name>
+    <events>
+        <variable constant="0" name="HasArrow" sid="415912961996891" static="0" type="number">1</variable>
+        <variable constant="0" name="CurrentItem" sid="874767608659876" static="0" type="text">Handgun</variable>
+        <variable constant="0" name="Collected" sid="520668833089039" static="0" type="number">5</variable>
+        <variable constant="0" name="ChangeTime" sid="141937814460704" static="0" type="number">10</variable>
+        <variable constant="0" name="broke" sid="379263894672187" static="0" type="number">1</variable>
+        <variable constant="0" name="Weapon_Select" sid="910938683176283" static="0" type="number">0</variable>
+        <event-block sid="289318848677556">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="834966086625426" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="925503913305284" type="Weapon">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="5" name="Set frame" sid="103080904353044" type="Weapon">
+                    <param id="0" name="Frame number">Weapon_Select</param>
+                </action>
+                <action id="0" name="Set text" sid="814738882476795" type="WeaponSelected">
+                    <param id="0" name="Text">&quot;Now Using: &quot;&amp; CurrentItem</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="615625429063409">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="373935667295407" type="System">
+                            <param id="0" name="Variable">broke</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="311926072372376" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="497833967082924" type="Weapon">
+                            <param id="0" name="Frame number">Weapon_Select+broke+1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="911173337997629">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="371845269794934" type="System">
+                            <param id="0" name="Variable">HasArrow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="512423625960110" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="358474186464938" type="Weapon">
+                            <param id="0" name="Frame number">8</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="314415454605241">
+            <conditions>
+                <condition id="0" name="On click" sid="559535273786824" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="997335045142538" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="419366939011533" type="Weapon">
+                    <param id="0" name="Object">Bullet</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="416204750501050">
+            <conditions>
+                <condition id="0" name="On click" sid="441435497341460" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="323037412516970" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="373525005596878" type="System">
+                    <param id="0" name="Variable">HasArrow</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="469731559052559" type="Weapon">
+                    <param id="0" name="Object">Arrow</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="929472056723146" type="System">
+                    <param id="0" name="Variable">HasArrow</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="488105327360961">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="552138199648596" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="229518258331705" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Value">round(random(0,collected))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="232099164657066">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="120867124160123" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="786993793231494" type="Weapon">
+                    <param id="0" name="Pin to">playerStandIn</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="412091383438307">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="687336078284531" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="519195803601073" type="System">
+                    <param id="0" name="Variable">CurrentItem</param>
+                    <param id="1" name="Value">&quot;Handgun&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="225690156885497">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="496805500494935" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="248769211649410" type="System">
+                    <param id="0" name="Variable">CurrentItem</param>
+                    <param id="1" name="Value">&quot;Beam Saber&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="304411681394697">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="119440429318408" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="612126264013452" type="System">
+                    <param id="0" name="Variable">CurrentItem</param>
+                    <param id="1" name="Value">&quot;Sword&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="706057445015093">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="985728549707994" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="889548842663575" type="System">
+                    <param id="0" name="Variable">CurrentItem</param>
+                    <param id="1" name="Value">&quot;Shovel&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="901903304279024">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="293313128289806" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="220723519908190" type="System">
+                    <param id="0" name="Variable">broke</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="124307358389333" type="System">
+                    <param id="0" name="Variable">CurrentItem</param>
+                    <param id="1" name="Value">&quot;Beaker&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="427679837360098">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="240818468119442" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="237488098432549" type="System">
+                    <param id="0" name="Variable">broke</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="240812231683386" type="System">
+                    <param id="0" name="Variable">CurrentItem</param>
+                    <param id="1" name="Value">&quot;Broken Beaker&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="390683538149441">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="362800004983630" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="775739770699560" type="System">
+                    <param id="0" name="Variable">broke</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="319163762398764" type="System">
+                    <param id="0" name="Variable">CurrentItem</param>
+                    <param id="1" name="Value">&quot;Broken Glass&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="879963671815228">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="725141534187189" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="571269668650896" type="System">
+                    <param id="0" name="Variable">HasArrow</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="865799360446577" type="System">
+                    <param id="0" name="Variable">CurrentItem</param>
+                    <param id="1" name="Value">&quot;Bow and Arrow&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="803341273589078">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="133956836369215" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="806194839439799" type="System">
+                    <param id="0" name="Variable">HasArrow</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="641026998198869" type="System">
+                    <param id="0" name="Variable">CurrentItem</param>
+                    <param id="1" name="Value">&quot;Bow&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="359584415500336">
+            <conditions>
+                <condition id="-37" name="Is number NaN" sid="941919578671132" type="System">
+                    <param id="0" name="Number">Weapon_Select</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="179120294729829" type="System">
+                    <param id="0" name="Variable">Weapon_Select</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

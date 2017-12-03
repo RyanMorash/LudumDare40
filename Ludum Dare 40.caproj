@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>Ludum Dare 40</name>
     <description></description>
@@ -11,10 +11,16 @@
     <saved-with-version>24400</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -250,6 +256,182 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sword" sid="709769378476809">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="288656882290043">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="996913398621552" speed="5">
+                    <frame duration="1" hotspotX="0.141732" hotspotY="0.5" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\sword.png">
+                        <collision-poly>
+                            <point x="0.925714" y="0.421053" />
+                            <point x="0.998216" y="0.540936" />
+                            <point x="0.933333" y="0.657895" />
+                            <point x="0.497143" y="0.763158" />
+                            <point x="0.233333" y="0.729532" />
+                            <point x="0.233695" y="0.499269" />
+                            <point x="0.241062" y="0.190058" />
+                            <point x="0.497143" y="0.263158" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Gun" sid="912697302711802">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="911035371735004">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="990383259480273" speed="5">
+                    <frame duration="1" hotspotX="0.178571" hotspotY="0.5" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\gun.png">
+                        <image-point name="Imagepoint 1" x="0.875" y="0.1875" />
+                        <collision-poly>
+                            <point x="0.0831858" y="0.112853" />
+                            <point x="0.499115" y="0.0470219" />
+                            <point x="0.953982" y="0.0438871" />
+                            <point x="0.486726" y="0.489028" />
+                            <point x="0.621239" y="0.344828" />
+                            <point x="0.499115" y="0.416928" />
+                            <point x="0.0247788" y="0.968652" />
+                            <point x="0.111504" y="0.489028" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bullet" sid="106798702405504">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="534727259367813">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="713270632360156">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="889091825534939" speed="5">
+                    <frame duration="1" hotspotX="0.466667" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="beam_saber" sid="601535799133495">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="499736126856627">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="349286484192276" speed="5">
+                    <frame duration="1" hotspotX="0.0787402" hotspotY="0.5" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\beam_saber.png">
+                        <collision-poly>
+                            <point x="0.974308" y="0.270833" />
+                            <point x="0.996047" y="0.5" />
+                            <point x="0.976285" y="0.75" />
+                            <point x="0.5" y="0.791667" />
+                            <point x="0.00395256" y="0.958333" />
+                            <point x="0.00197631" y="0.0208333" />
+                            <point x="0.5" y="0.208333" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="beaker" sid="382879534401013">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="309747943416508">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="848307142413982" speed="5">
+                    <frame duration="1" hotspotX="2.64706" hotspotY="-2.72727" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\beaker.png">
+                        <collision-poly>
+                            <point x="0.0196078" y="0.830769" />
+                            <point x="0.00653595" y="0.507692" />
+                            <point x="0.0261438" y="0.230769" />
+                            <point x="0.921569" y="0" />
+                            <point x="1" y="0.507692" />
+                            <point x="0.908497" y="1" />
+                            <point x="0.496732" y="0.815385" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="brokenBeaker" sid="768566128117269">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="341669815787922">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="270817228912027" speed="5">
+                    <frame duration="1" hotspotX="0.235294" hotspotY="0.545455" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\beaker.png">
+                        <collision-poly>
+                            <point x="0.0196078" y="0.830769" />
+                            <point x="0.00653595" y="0.507692" />
+                            <point x="0.0261438" y="0.230769" />
+                            <point x="0.921569" y="0" />
+                            <point x="1" y="0.507692" />
+                            <point x="0.908497" y="1" />
+                            <point x="0.496732" y="0.815385" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="brokenBeaker2" sid="552203532459375">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="363759010629939">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="982574772516608" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.509804" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\beaker.png">
+                        <collision-poly>
+                            <point x="0.169231" y="0.0196078" />
+                            <point x="0.492308" y="0.00653595" />
+                            <point x="0.769231" y="0.0261438" />
+                            <point x="1" y="0.921569" />
+                            <point x="0.492308" y="1" />
+                            <point x="1.86265e-009" y="0.908497" />
+                            <point x="0.184615" y="0.496732" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Shovel" sid="908358813210717">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="387270149890705">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="599485753984217" speed="5">
+                    <frame duration="1" hotspotX="0.265306" hotspotY="0.698413" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\shovel.png">
+                        <collision-poly>
+                            <point x="0.133106" y="0.845238" />
+                            <point x="0.124573" y="0.785714" />
+                            <point x="0.6843" y="0.416667" />
+                            <point x="0.660409" y="0.281746" />
+                            <point x="0.928328" y="0" />
+                            <point x="1" y="0.539683" />
+                            <point x="0.716724" y="0.710318" />
+                            <point x="0.706484" y="0.527778" />
         <object-type name="PlayerWalk" sid="523790597717394">
             <plugin id="Sprite" />
             <behaviors>
@@ -311,6 +493,195 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="playerStandIn" sid="122904513356124">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="8Direction" sid="394297834713299">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="719794173977585" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0.8875" y="0.381818" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="642100721904511">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Keyboard" sid="652259844965297">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Weapon" sid="487891195406813">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="282293829765635">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="9" loop="0" name="New" pingpong="0" repeatcount="1" repeatto="0" sid="785424173829939" speed="0">
+                    <frame duration="1" hotspotX="0.160714" hotspotY="0.71875" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\gun_set.png">
+                        <image-point name="Imagepoint 1" x="0.892857" y="0.25" />
+                        <collision-poly>
+                            <point x="0.0892857" y="0.15625" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.964286" y="0.0625" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.625" y="0.34375" />
+                            <point x="0.5" y="0.4375" />
+                            <point x="0.0357143" y="0.9375" />
+                            <point x="0.107143" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.102362" hotspotY="0.583333" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\beam_saber_set.png">
+                        <collision-poly>
+                            <point x="0.015748" y="0.166667" />
+                            <point x="0.968504" y="0.333333" />
+                            <point x="0.992126" y="0.5" />
+                            <point x="0.976378" y="0.75" />
+                            <point x="0.496063" y="0.833333" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.133858" hotspotY="0.611111" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\sword_set.png">
+                        <collision-poly>
+                            <point x="0.0472441" y="0.333333" />
+                            <point x="0.496063" y="0.277778" />
+                            <point x="0.937008" y="0.444444" />
+                            <point x="0.984252" y="0.5" />
+                            <point x="0.952756" y="0.666667" />
+                            <point x="0.496063" y="0.777778" />
+                            <point x="0.0472441" y="0.666667" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.156463" hotspotY="0.809524" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\shovel_set.png">
+                        <collision-poly>
+                            <point x="0.292517" y="0.68254" />
+                            <point x="0.496599" y="0.555556" />
+                            <point x="0.945578" y="0.126984" />
+                            <point x="1" y="0.492063" />
+                            <point x="0.843537" y="0.634921" />
+                            <point x="0.496599" y="0.650794" />
+                            <point x="0.0204082" y="0.952381" />
+                            <point x="0.598639" y="0.492063" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.196078" hotspotY="0.545455" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\beaker_set.png">
+                        <collision-poly>
+                            <point x="0.0980392" y="0.227273" />
+                            <point x="0.490196" y="0.181818" />
+                            <point x="0.960784" y="0.0909091" />
+                            <point x="1" y="0.5" />
+                            <point x="0.960784" y="0.909091" />
+                            <point x="0.490196" y="0.818182" />
+                            <point x="0.0784314" y="0.818182" />
+                            <point x="0.0196078" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.885246" hotspotY="0.485714" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\bowArrow_set.png">
+                        <image-point name="Imagepoint 1" x="0.491803" y="0.485714" />
+                        <collision-poly>
+                            <point x="0.491803" y="0.0571429" />
+                            <point x="0.721311" y="0.161905" />
+                            <point x="0.918033" y="0.495238" />
+                            <point x="0.704918" y="0.828571" />
+                            <point x="0.491803" y="0.942857" />
+                            <point x="0.360656" y="0.790476" />
+                            <point x="0.0491803" y="0.495238" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.196078" hotspotY="0.545455" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\broken_beaker_set.png">
+                        <collision-poly>
+                            <point x="0.0980392" y="0.227273" />
+                            <point x="0.490196" y="0.181818" />
+                            <point x="0.803922" y="0.454545" />
+                            <point x="0.843137" y="0.5" />
+                            <point x="0.960784" y="0.909091" />
+                            <point x="0.490196" y="0.818182" />
+                            <point x="0.0784314" y="0.818182" />
+                            <point x="0.0196078" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.3" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504762" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\bow_set.png">
+                        <collision-poly>
+                            <point x="0.0526316" y="0.0190476" />
+                            <point x="0.631579" y="0.133333" />
+                            <point x="1" y="0.495238" />
+                            <point x="0.605263" y="0.857143" />
+                            <point x="0.5" y="0.885714" />
+                            <point x="0.0526316" y="0.980952" />
+                            <point x="0.0789474" y="0.495238" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="WeaponSelected" sid="426186228517464">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="bow" sid="409511646325194">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="359817279199509" speed="5">
+                    <frame duration="1" hotspotX="0.921053" hotspotY="0.485714" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\bow.png">
+                        <collision-poly>
+                            <point x="0.0460526" y="0.0167464" />
+                            <point x="0.5" y="0.100478" />
+                            <point x="0.618421" y="0.138756" />
+                            <point x="0.980263" y="0.5" />
+                            <point x="0.585526" y="0.849282" />
+                            <point x="0.5" y="0.87799" />
+                            <point x="0.0460526" y="0.983254" />
+                            <point x="0.0723684" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bowArrow" sid="313963480400523">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="335088142233260" speed="5">
+                    <frame duration="1" hotspotX="0.508197" hotspotY="0.495238" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\weapons_bow_and_arrow.png">
+                        <collision-poly>
+                            <point x="0.342975" y="0.188556" />
+                            <point x="0.5" y="0.0572906" />
+                            <point x="0.710744" y="0.157529" />
+                            <point x="0.929752" y="0.494045" />
+                            <point x="0.706612" y="0.83056" />
+                            <point x="0.5" y="0.935572" />
+                            <point x="0.0371901" y="0.494045" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Arrow" sid="316574585385253">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="491169472595460">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="354698449061107">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="204379678492827" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Fred\Desktop\Ludum Dare 40\weapons\arrow.png">
+                        <collision-poly>
+                            <point x="0.0291667" y="0.233333" />
+                            <point x="0.5" y="0.3" />
+                            <point x="0.9625" y="0.3" />
+                            <point x="0.975" y="0.5" />
+                            <point x="0.95" y="0.6" />
+                            <point x="0.5" y="0.533333" />
+                            <point x="0.0333333" y="0.733333" />
         <object-type name="Keyboard" sid="773074481653611">
             <plugin id="Keyboard" />
         </object-type>
@@ -368,6 +739,14 @@
     </object-folder>
     <families />
     <layout-folder>
+        <layout>Weapons Layout.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Weapons Event Sheet.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="3" />
+        <global-instance type="Keyboard" uid="12" />
         <layout>Level 1 Layout.xml</layout>
         <layout>Test Layout.xml</layout>
     </layout-folder>
