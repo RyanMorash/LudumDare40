@@ -55,7 +55,192 @@
                 </behavior-type>
             </behaviors>
             <texture original-source="C:\Users\Patrick\Desktop\New folder\Complete Pack\Base pack\Tiles\tiles_spritesheet.png" />
-            <tiles />
+            <tiles>
+                <tile id="2">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="0.575" />
+                        <point x="0" y="0.567857" />
+                    </collision-poly>
+                </tile>
+                <tile id="8">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0.482143" y="0.478572" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="14">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="0.560714" />
+                        <point x="0.00357143" y="0.567857" />
+                    </collision-poly>
+                </tile>
+                <tile id="26">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="0.996429" y="0.571428" />
+                        <point x="0.00357144" y="0.571429" />
+                    </collision-poly>
+                </tile>
+                <tile id="30">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0.507143" y="0.478571" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="32">
+                    <collision-poly>
+                        <point x="0.460714" y="0.517857" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="39">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0.485714" y="0.496429" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="40">
+                    <collision-poly>
+                        <point x="0.303571" y="1" />
+                        <point x="0.8" y="1" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="42">
+                    <collision-poly>
+                        <point x="0.467857" y="0.510714" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="44">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="0.571428" />
+                        <point x="0" y="0.578571" />
+                    </collision-poly>
+                </tile>
+                <tile id="56">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="0.567857" />
+                        <point x="0.00357143" y="0.578571" />
+                    </collision-poly>
+                </tile>
+                <tile id="63">
+                    <collision-poly>
+                        <point x="0.478571" y="0.503571" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="64">
+                    <collision-poly>
+                        <point x="0.210714" y="1" />
+                        <point x="0.621428" y="1" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="68">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="0.564286" />
+                        <point x="0" y="0.571428" />
+                    </collision-poly>
+                </tile>
+                <tile id="69">
+                    <collision-poly>
+                        <point x="0.135714" y="0.446429" />
+                        <point x="0.864286" y="0.442857" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="71">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="0.560714" />
+                        <point x="0" y="0.560714" />
+                    </collision-poly>
+                </tile>
+                <tile id="80">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="0.989286" y="0.575" />
+                        <point x="0.0107143" y="0.575" />
+                    </collision-poly>
+                </tile>
+                <tile id="104">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0.00714286" />
+                        <point x="0.860714" y="0.825" />
+                        <point x="0.025" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="105">
+                    <collision-poly>
+                        <point x="0.464286" y="0.525" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="117">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="0.996429" y="0.571428" />
+                        <point x="0.00357143" y="0.571428" />
+                    </collision-poly>
+                </tile>
+                <tile id="119">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="0.996429" y="0.571428" />
+                        <point x="0" y="0.567857" />
+                    </collision-poly>
+                </tile>
+                <tile id="126">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="0.567857" />
+                        <point x="0" y="0.567857" />
+                    </collision-poly>
+                </tile>
+                <tile id="128">
+                    <collision-poly>
+                        <point x="0" y="4.65661e-010" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0.153571" y="0.821428" />
+                    </collision-poly>
+                </tile>
+            </tiles>
         </object-type>
         <object-type name="Background" sid="134935509588767">
             <plugin id="Sprite" />
@@ -77,17 +262,52 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="623096074065536" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_idle.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_idle.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.172727" />
+                            <point x="0.875" y="0.163636" />
+                            <point x="0.8375" y="1" />
+                            <point x="0.15" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="2" loop="1" name="Walking" pingpong="0" repeatcount="1" repeatto="0" sid="545718483712860" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_walk1.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_walk2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_walk1.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.172727" />
+                            <point x="0.875" y="0.163636" />
+                            <point x="0.8375" y="1" />
+                            <point x="0.15" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_walk2.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.172727" />
+                            <point x="0.875" y="0.163636" />
+                            <point x="0.8375" y="1" />
+                            <point x="0.15" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="882134056912748" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_jump.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_jump.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.172727" />
+                            <point x="0.875" y="0.163636" />
+                            <point x="0.8375" y="1" />
+                            <point x="0.15" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="Fall" pingpong="0" repeatcount="1" repeatto="0" sid="518583664488205" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_fall.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_fall.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.172727" />
+                            <point x="0.875" y="0.163636" />
+                            <point x="0.8375" y="1" />
+                            <point x="0.15" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
