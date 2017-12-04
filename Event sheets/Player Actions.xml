@@ -3,27 +3,41 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Player Actions</name>
     <events>
-        <event-block sid="426869317913489">
+        <include>Weapons Event Sheet</include>
+        <include>Enemy Actions</include>
+        <event-block any="1" sid="426869317913489">
             <conditions>
                 <condition id="0" name="On key pressed" sid="491920720644265" type="Keyboard">
                     <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="154822216896978" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="7" name="Set mirrored" sid="667799149551795" type="PlayerWalk">
                     <param id="0" name="State">0</param>
                 </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="630135818684458" type="PlayerWalk">
+                    <param id="0" name="Control">0</param>
+                </action>
             </actions>
         </event-block>
-        <event-block sid="599260450673949">
+        <event-block any="1" sid="599260450673949">
             <conditions>
                 <condition id="0" name="On key pressed" sid="507204623668791" type="Keyboard">
                     <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="331280652334415" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="7" name="Set mirrored" sid="707655745665910" type="PlayerWalk">
                     <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="669720110536077" type="PlayerWalk">
+                    <param id="0" name="Control">1</param>
                 </action>
             </actions>
         </event-block>
@@ -79,6 +93,68 @@
                 <action id="4" name="Set animation" sid="875138702028790" type="PlayerWalk">
                     <param id="0" name="Animation">&quot;Idle&quot;</param>
                     <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="283879082656270">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="249858897814544" type="System">
+                    <param id="0" name="Variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="115432337177726" type="System" />
+                <action id="-26" name="Restart layout" sid="823324523910398" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="716697128134637">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="393880748350983" type="PlayerWalk">
+                    <param id="0" name="Object">Goal</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="578995070245703" type="WinText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="731185139913092" type="Spider" />
+                <action id="-9" name="Set value" sid="235096063863856" type="System">
+                    <param id="0" name="Variable">Collected</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="159458589885464" type="RestartGame">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="871485932101164" type="RestartGame">
+                    <param id="0" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="718466953985962">
+            <conditions>
+                <condition id="0" name="On clicked" sid="567564398403802" type="RestartGame" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="957292186305302" type="System" />
+                <action id="-2" name="Go to layout" sid="309337096876795" type="System">
+                    <param id="0" name="Layout">Opening Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="372922753336784">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="662871402922836" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="945554339475147" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="897152095865384" type="PlayerWalk">
+                    <param id="0" name="Control">2</param>
                 </action>
             </actions>
         </event-block>

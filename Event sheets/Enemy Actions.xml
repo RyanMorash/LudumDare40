@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Enemy Actions</name>
+    <events>
+        <variable constant="0" name="PlayerSeen" sid="258034351809551" static="0" type="number">0</variable>
+        <event-block sid="933238250962094">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="566983991062747" type="System" />
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="155551629346008" type="Spider">
+                    <param id="0" name="Object">PlayerWalk</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="731905393454498">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="718141552292462" type="Spider">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">PlayerWalk.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="973286883116056" type="Spider">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="401799624947471">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="976736993387081" type="Spider">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">PlayerWalk.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="236176896131263" type="Spider">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="342967732739133">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="238627905583650" type="Spider">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">PlayerWalk.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="640788476315584" type="Spider">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="872331693067357">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="706687069789402" type="Spider">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="519648600513136" type="Spider" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

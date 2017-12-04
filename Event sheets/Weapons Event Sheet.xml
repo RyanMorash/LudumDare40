@@ -3,11 +3,15 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Weapons Event Sheet</name>
     <events>
+        <variable constant="0" name="TimeCount" sid="332066354909891" static="0" type="number">10</variable>
+        <variable constant="0" name="Killed" sid="702805146379576" static="0" type="number">0</variable>
+        <variable constant="0" name="Enemies" sid="302072107911855" static="0" type="number">0</variable>
+        <variable constant="0" name="PlayerHealth" sid="379793178287666" static="0" type="number">50</variable>
         <variable constant="0" name="HasArrow" sid="415912961996891" static="0" type="number">1</variable>
         <variable constant="0" name="CurrentItem" sid="874767608659876" static="0" type="text">Handgun</variable>
-        <variable constant="0" name="Collected" sid="520668833089039" static="0" type="number">5</variable>
+        <variable constant="0" name="Collected" sid="520668833089039" static="0" type="number">0</variable>
         <variable constant="0" name="ChangeTime" sid="141937814460704" static="0" type="number">10</variable>
-        <variable constant="0" name="broke" sid="379263894672187" static="0" type="number">1</variable>
+        <variable constant="0" name="broke" sid="379263894672187" static="0" type="number">0</variable>
         <variable constant="0" name="Weapon_Select" sid="910938683176283" static="0" type="number">0</variable>
         <event-block sid="289318848677556">
             <conditions>
@@ -23,6 +27,12 @@
                 </action>
                 <action id="0" name="Set text" sid="814738882476795" type="WeaponSelected">
                     <param id="0" name="Text">&quot;Now Using: &quot;&amp; CurrentItem</param>
+                </action>
+                <action id="0" name="Set text" sid="727749182442963" type="HealthText">
+                    <param id="0" name="Text">&quot;Health: &quot;&amp;PlayerHealth</param>
+                </action>
+                <action id="0" name="Set text" sid="302723161475668" type="WeaponAnnounceText">
+                    <param id="0" name="Text">&quot;New Weapon: &quot;&amp; CurrentItem</param>
                 </action>
             </actions>
             <sub-events>
@@ -79,10 +89,16 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Spawn another object" sid="419366939011533" type="Weapon">
+                <action id="0" name="Spawn another object" sid="355080262453395" type="Weapon">
                     <param id="0" name="Object">Bullet</param>
-                    <param id="1" name="Layer">0</param>
+                    <param id="1" name="Layer">1</param>
                     <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Play" sid="423335753543689" type="Audio">
+                    <param id="0" name="Audio file">344142__brokenphono__gunshot-002</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -106,19 +122,25 @@
             <actions>
                 <action id="0" name="Spawn another object" sid="469731559052559" type="Weapon">
                     <param id="0" name="Object">Arrow</param>
-                    <param id="1" name="Layer">0</param>
+                    <param id="1" name="Layer">1</param>
                     <param id="2" name="Image point">1</param>
                 </action>
                 <action id="-9" name="Set value" sid="929472056723146" type="System">
                     <param id="0" name="Variable">HasArrow</param>
                     <param id="1" name="Value">0</param>
                 </action>
+                <action id="0" name="Play" sid="593525683718140" type="Audio">
+                    <param id="0" name="Audio file">407481__loyalty-freak-music__equip</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="488105327360961">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="552138199648596" type="System">
-                    <param id="0" name="Interval (seconds)">2</param>
+                    <param id="0" name="Interval (seconds)">TimeCount</param>
                 </condition>
             </conditions>
             <actions>
@@ -134,7 +156,7 @@
             </conditions>
             <actions>
                 <action behavior="Pin" id="0" name="Pin to object" sid="786993793231494" type="Weapon">
-                    <param id="0" name="Pin to">playerStandIn</param>
+                    <param id="0" name="Pin to">PlayerWalk</param>
                     <param id="1" name="Mode">0</param>
                 </action>
             </actions>
@@ -152,6 +174,10 @@
                     <param id="0" name="Variable">CurrentItem</param>
                     <param id="1" name="Value">&quot;Handgun&quot;</param>
                 </action>
+                <action id="-9" name="Set value" sid="321810534369864" type="System">
+                    <param id="0" name="Variable">TimeCount</param>
+                    <param id="1" name="Value">5</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="225690156885497">
@@ -166,6 +192,10 @@
                 <action id="-9" name="Set value" sid="248769211649410" type="System">
                     <param id="0" name="Variable">CurrentItem</param>
                     <param id="1" name="Value">&quot;Beam Saber&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="664587852101117" type="System">
+                    <param id="0" name="Variable">TimeCount</param>
+                    <param id="1" name="Value">4</param>
                 </action>
             </actions>
         </event-block>
@@ -182,6 +212,10 @@
                     <param id="0" name="Variable">CurrentItem</param>
                     <param id="1" name="Value">&quot;Sword&quot;</param>
                 </action>
+                <action id="-9" name="Set value" sid="967047742980341" type="System">
+                    <param id="0" name="Variable">TimeCount</param>
+                    <param id="1" name="Value">8</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="706057445015093">
@@ -196,6 +230,10 @@
                 <action id="-9" name="Set value" sid="889548842663575" type="System">
                     <param id="0" name="Variable">CurrentItem</param>
                     <param id="1" name="Value">&quot;Shovel&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="534369343390065" type="System">
+                    <param id="0" name="Variable">TimeCount</param>
+                    <param id="1" name="Value">8</param>
                 </action>
             </actions>
         </event-block>
@@ -216,6 +254,10 @@
                 <action id="-9" name="Set value" sid="124307358389333" type="System">
                     <param id="0" name="Variable">CurrentItem</param>
                     <param id="1" name="Value">&quot;Beaker&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="435482915191917" type="System">
+                    <param id="0" name="Variable">TimeCount</param>
+                    <param id="1" name="Value">8</param>
                 </action>
             </actions>
         </event-block>
@@ -256,6 +298,10 @@
                 <action id="-9" name="Set value" sid="319163762398764" type="System">
                     <param id="0" name="Variable">CurrentItem</param>
                     <param id="1" name="Value">&quot;Broken Glass&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="755905978652141" type="System">
+                    <param id="0" name="Variable">TimeCount</param>
+                    <param id="1" name="Value">15</param>
                 </action>
             </actions>
         </event-block>
@@ -311,6 +357,395 @@
                     <param id="1" name="Value">4</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="685403032127901">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="388271535968628" type="Bullet">
+                    <param id="0" name="Object">Spider</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="202412094332967" type="Spider">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="-9" name="Destroy" sid="419423979260292" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="335364615879040">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="797027931900714" type="Arrow">
+                    <param id="0" name="Object">Spider</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="893044001838501" type="Spider">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Destroy" sid="676118070434833" type="Arrow" />
+            </actions>
+        </event-block>
+        <event-block sid="722756162444211">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="478454733169129" type="Weapon">
+                    <param id="0" name="Object">Spider</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="381206912738178">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="484750241682014" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="281060360012529" type="System">
+                            <param id="0" name="Variable">broke</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="185030966942213" type="System">
+                            <param id="0" name="Variable">broke</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="182382453732310" type="Spider">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="245518124279463" type="Spider">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="795631611310443" type="Spider">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="782842587842852" type="Audio">
+                            <param id="0" name="Audio file">407431__deezsoundztho__bottle-break</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="153415660334884">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="180269350384097" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="414827177986464" type="System">
+                            <param id="0" name="Variable">broke</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="831337407490404" type="System">
+                            <param id="0" name="Variable">broke</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="367038083158694" type="Spider">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="422286419436966" type="Spider">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="0" name="Play" sid="241763986283149" type="Audio">
+                            <param id="0" name="Audio file">407431__deezsoundztho__bottle-break</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="168592166420999">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="332491791261496" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="149817760994136" type="Spider">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">9</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="707300430526044" type="Spider">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="132034954237978" type="Spider">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="986904804408552" type="Audio">
+                            <param id="0" name="Audio file">47125__gyzhor__lightsaber3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="916806673328582">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="109784744381164" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="782697332418436" type="Spider">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="928570405729113" type="Spider">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="522340120525467" type="Spider">
+                            <param id="0" name="Speed">500</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="857646103279099" type="Spider">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="329234990038228" type="Audio">
+                            <param id="0" name="Audio file">30244__streety__sword1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="234299548211674">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="398305179102363" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="980482823030533" type="Spider">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="984082159378772" type="Spider">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="213938434835426" type="Spider">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="537007944716734" type="Audio">
+                            <param id="0" name="Audio file">406493__anthousai__hit-metallic-deep-hollow-thunk</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="453974179407059">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="101476584230685" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="856424594242867" type="Spider">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="168176576933548" type="Spider">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="0" name="Play" sid="940418287736305" type="Audio">
+                            <param id="0" name="Audio file">407481__loyalty-freak-music__equip</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="470878761085848">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="971911976466089" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="577005015839162" type="Spider">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="499829926871519" type="Spider">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="717985131104185" type="Audio">
+                            <param id="0" name="Audio file">407481__loyalty-freak-music__equip</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="202102109199319">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="982221267704807" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="657759734734071" type="Spider">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="626176638756614" type="Spider">
+                    <param id="0" name="Speed">400</param>
+                </action>
+                <action id="-15" name="Set visible" sid="179466500601223" type="WeaponAnnounceText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="153567410241911">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="450894254101687" type="PlayerWalk">
+                    <param id="0" name="Object">Spider</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="158349032445055" type="System">
+                    <param id="0" name="Variable">PlayerHealth</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="421239344745219" type="PlayerWalk">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">0.5</param>
+                </action>
+                <action id="0" name="Play" sid="934008459093532" type="Audio">
+                    <param id="0" name="Audio file">342230__christopherderp__hurt-2-male</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="394376296088296">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="784059904507720" type="Spider" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="624814422980199" type="System">
+                    <param id="0" name="Variable">Killed</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block any="1" sid="221030731819180">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="607161592205562" type="System">
+                            <param id="0" name="Variable">Killed</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="582229712599998" type="System">
+                            <param id="0" name="Variable">Killed</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="171624533198860" type="System">
+                            <param id="0" name="Variable">Killed</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">6</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="424109164514380" type="System">
+                            <param id="0" name="Variable">Killed</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="471376478030784" type="System">
+                            <param id="0" name="Variable">Killed</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="834295505640179" type="System">
+                            <param id="0" name="Variable">Collected</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="329226603654431" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Value">Collected</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="159237448253526" type="WeaponAnnounceText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="949740040419624">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="775297981793026" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="922406232204354" type="WeaponAnnounceText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="415926522737733">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="901813593918087" type="System">
+                            <param id="0" name="Variable">broke</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="661455211700915" type="System">
+                            <param id="0" name="Variable">Weapon_Select</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="877810635875742" type="PlayerWalk">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.3</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="653122620307902" type="System">
+                            <param id="0" name="Variable">PlayerHealth</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
